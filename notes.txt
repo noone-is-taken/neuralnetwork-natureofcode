@@ -1,0 +1,100 @@
+Perceptron(part1) https://www.youtube.com/watch?v=ntKn5TPHHAk&ab_channel=TheCodingTrain
+
+Perceptron is a single neuron.
+
+The perceptron gets two inputs (a0 AND a1)
+and gives a output (b0 OR b1)
+(the the input number can go above 2)
+
+
+
+a0_
+   \
+    neuron/perceptron----b
+  _/
+a1
+the idea is from two inputs we get one output, been this output the good result
+for example if the inputs are the position of a point in a table and the output his class,
+the perceptron will know if a point is from two classes
+
+
+INSIDE PERCEPTRON
+
+1.Sum
+inputs goes inside the neuron, and the inputs are weighthet when they go in
+and the perceptron creates a sum of all of the inputs multiplied by the weights*
+a°*w°+x¹*w¹
+°248
+¹251
+*for us to get a correct weight is exist many metohds but starting with random values its fine :)
+
+2.Activation Function 
+It conform the output in some disired range
+(this case two outputs)
+this is easy. SIGN(N) The funciton outpus -1 if n < 0 and outputs 1 if n < 0 (if it's 0 it has to return always the same output)
+
+3.Now we have to train the perceptron to get correct values. We need to have a know training data and we need the perceptron to guess.
+With the guess and the correct answer we can calculate the error.
+The error is the answer - guess
+
+desired		guess		error
+-1		-1		0
+-1		+1		-2
++1		-1		+2
++1		+1		0
+
+with this we want to search for the optimal weight. (The weight influences with the output so a correct weight gives a correct output)
+if these a mistake i want to change w° = w° + Δw° (we want to sum the weight some valor )
+We change the value of Δw° with gradient descent 
+Δw° = error * a° * learning rate
+
+
+
+¡Learning RATE!
+
+PSEUDO CODE
+
+
+
+class Perceptron:
+
+	array[2] weights//w0,w1
+	lr = 0.1
+	at the start:
+		 initialize the weights randomly
+
+
+	function guess(array[] inputus):
+		sum = 0
+		for loop all weigths:
+			sum += inputs[i] * weights[i]
+
+		return Sign(sum)
+
+	function train(array[] inputs, target):
+		guess = guess(inputs)
+		error = target - guess
+
+		for loop all weights:
+			weights[i] += error * inputs[i] * lr
+	
+
+function Sign(n):
+	if(n>=0) return 1
+	else return 0
+
+
+
+
+
+//In this example we will have a point in a space, the point will be from class 1 (x>y) or class -1 (x<=y)
+//this points will help our perceptron to learn/train
+class Point
+	x,y,label
+
+	at the start:
+		initialize x and y randomly 
+		if(x>y) label = 1
+		else label = -1
+
+
