@@ -2,17 +2,17 @@ Perceptron(part1) https://www.youtube.com/watch?v=ntKn5TPHHAk&ab_channel=TheCodi
 
 Perceptron is a single neuron.
 
-The perceptron gets two inputs (a0 AND a1)
-and gives a output (b0 OR b1)
+The perceptron gets two inputs (a° AND a¹)
+and gives a output (b° OR b¹)
 (the the input number can go above 2)
 
 
 
-a0_
+a°_
    \
     neuron/perceptron----b
   _/
-a1
+a
 the idea is from two inputs we get one output, been this output the good result
 for example if the inputs are the position of a point in a table and the output his class,
 the perceptron will know if a point is from two classes
@@ -24,8 +24,7 @@ INSIDE PERCEPTRON
 inputs goes inside the neuron, and the inputs are weighthet when they go in
 and the perceptron creates a sum of all of the inputs multiplied by the weights*
 a°*w°+x¹*w¹
-°248
-¹251
+
 *for us to get a correct weight is exist many metohds but starting with random values its fine :)
 
 2.Activation Function 
@@ -38,10 +37,10 @@ With the guess and the correct answer we can calculate the error.
 The error is the answer - guess
 
 desired		guess		error
--1		-1		0
--1		+1		-2
-+1		-1		+2
-+1		+1		0
+-1			-1			0
+-1			+1			-2
++1			-1			+2
++1			+1			0
 
 with this we want to search for the optimal weight. (The weight influences with the output so a correct weight gives a correct output)
 if these a mistake i want to change w° = w° + Δw° (we want to sum the weight some valor )
@@ -98,3 +97,12 @@ class Point
 		else label = -1
 
 
+notes
+
+the goal of the perceptron is to find the perfect weight, if u run one time and get a correct weight and then change the initial weight for the correct nothing will change
+what diference a point label is the internan condition, if u change that the perceptron will need to re train with a correct data
+learning rate is and importan element but is difficult to ajust that value because this problem is easy and the perceptron gets the result to fast
+
+alt + note pad numbers
+°248
+¹251

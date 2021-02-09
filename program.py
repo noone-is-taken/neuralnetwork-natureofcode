@@ -4,7 +4,7 @@ from random import random
 class Perceptron:
     
     def __init__(self):
-        self.weight = [random(),random()]
+        self.weight = [random(),random()]#[1.4594698422574401, -1.4929581195187729] or [0.40330356803967315, -0.49735085687041586]
         self.lr = 0.1
 
     def guess(self,inputs):
@@ -50,7 +50,7 @@ for i in range(len(points)):
     inputs = [points[i].x, points[i].y]
     print(points[i].x," ",points[i].y, " ",points[i].label, "guess: ",neuron.guess(inputs))
 
-for k in range(100):
+for k in range(5):
     for i in range(len(points)):
         inputs = [points[i].x, points[i].y]
         neuron.train(inputs,points[i].label)
