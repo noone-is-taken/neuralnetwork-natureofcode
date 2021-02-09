@@ -5,7 +5,7 @@ class Perceptron:
     
     def __init__(self):
         self.weight = [random(),random()]
-        self.lr = 0.2
+        self.lr = 0.1
 
     def guess(self,inputs):
         sume = 0
@@ -16,7 +16,7 @@ class Perceptron:
     def train(self,inputs,target):
         guess = self.guess(inputs)
         error = target - guess
-        print(error)
+        
         for i in range(len(self.weight)):
             self.weight[i] += error * inputs[i] * self.lr
 
@@ -25,7 +25,7 @@ def sign(n):
     if(n>=0):
          return 1
     else:
-         return 0
+         return -1
 
 
 class Point:
@@ -46,11 +46,15 @@ for i in range (10):
 
 print(neuron.weight)
 
-for k in range(10):
+for i in range(len(points)):
+    inputs = [points[i].x, points[i].y]
+    print(points[i].x," ",points[i].y, " ",points[i].label, "guess: ",neuron.guess(inputs))
+
+for k in range(100):
     for i in range(len(points)):
         inputs = [points[i].x, points[i].y]
         neuron.train(inputs,points[i].label)
-
+print("---------")
 for i in range(len(points)):
     inputs = [points[i].x, points[i].y]
     print(points[i].x," ",points[i].y, " ",points[i].label, "guess: ",neuron.guess(inputs))
