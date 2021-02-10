@@ -12,7 +12,7 @@ a°_
    \
     neuron/perceptron----b
   _/
-a
+a¹
 the idea is from two inputs we get one output, been this output the good result
 for example if the inputs are the position of a point in a table and the output his class,
 the perceptron will know if a point is from two classes
@@ -47,7 +47,12 @@ if these a mistake i want to change w° = w° + Δw° (we want to sum the weight
 We change the value of Δw° with gradient descent 
 Δw° = error * a° * learning rate
 
+(semi optional)
+4.Bias is one input we need to add in order to get some results right
+if the input is 0 the perceptron won't be able to make the calculs right so we need to add this Bias
+the bias is an extra input that is always one, we also need a weight for this bias
 
+(pseudocode belove dosent include bias)
 
 ¡Learning RATE!
 

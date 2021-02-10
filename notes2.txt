@@ -1,0 +1,28 @@
+Perceptron 2 
+
+Classic is a algortihm that thanks to a training can learn to destingue two differnet type of inputs (this case is based on their position)
+
+in this file we cover
+
+1. change point x and y to be between -1,1
+
+2. the habiliti to change the label condition ( basicily make a generic formula of a line like y = 3x +2)
+here we need a function like this
+function f(x):
+    return 0.3*x+2
+//the formula of a line is y = mx + base
+
+3. bias 
+
+4. now we want to see how the perceptron guees the line
+for that we need a little equation
+so we know 
+w0x + w1y + w2b = 0
+in order to get the y we do the equation
+w/y = -w2b - w0x
+y = -(w2/w1)* b - (w0/w1)* x
+the b is always 1 so we dont need that in the final code
+
+this math "works" fine, for experience i see two major things
+    1 the guess turns negative all the x i put
+    2 the guess will not be perfect because we have not enought data for the line to be perfect
