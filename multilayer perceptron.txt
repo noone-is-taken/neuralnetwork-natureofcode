@@ -1,0 +1,50 @@
+So we understand what a perceptron is, but where is the limit? Perceptron cant solve problems that we can't dive with a line
+
+in boolean table the condition && and || are like this:
+
+AND &&
+	True	False
+True	True	False
+False	False	False
+
+here if the two inputs are true its true but if one is false its false
+so we can divide true and false with only one line
+
+OR || 
+	True	False
+True	True	True
+False	True	False
+
+here if just one is true we will get true else its false
+again it can divide with one line
+
+but the XOR condition is diferent
+heres the table
+
+XOR
+	True	False
+True	False	True
+False	True	False
+
+so here we have the tabel and indicates this
+if the both inputs are true then its false
+if both are false then its false
+but if one is false and the other true its true
+
+This table cant be divide by one line, but it can be divided by two
+
+so how we manege to solve this problem?
+
+XOR conditions in realiti its just !AND AND OR 
+and if a single perceptron can distinguis between AND and OR be can do this
+
+input1
+		
+	(input1 and 2) perceptron(!AND)--------\
+						perceptron(AND)
+	(input1 and 2) perceptron(OR)----------/
+
+input2
+
+for more explaination here's the video og shiffman
+https://www.youtube.com/watch?v=u5GAVdLQyIg&ab_channel=TheCodingTrain

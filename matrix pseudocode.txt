@@ -1,0 +1,127 @@
+DESC
+
+We want to be able to create a neural network that can have multiple input nodes hiden nodes and output nodes
+the function will have 3 arguments, one for the number of inputs the number of hiden and the number of output nodes we need
+
+so because the math of a neural network is multiply the input with the weight of the hiden layer we get something like this
+
+x1 * w11 + x2 * w12
+x1 * w21 + x2 * w22
+
+this can be expresed as a matrix and will do the job
+
+(x1) * (w11 w21)
+(x2)   (w12 w22)
+
+multipling matrix is done by colums * row in the same way is done above
+
+we will use Linear Algebra
+-Vector
+Vector is multiple dimensions.
+An example is [2 3]
+The operations we can do are
+    1 scale
+    [2 3] * 2 = [4 6]
+    
+    2 elemnt 
+    [2 3] + [-1 5] = [1 8]
+
+    3 Dot Product
+    [2 3] * [-1 5] = (2 * -1) + (3 * 5) = -2 + 15 =  13
+-Matrix
+Matrix are two dimension array/grid
+we refere the matrix by row * comlumns ex:
+[a b c]
+[d e f]
+is 2 * 3 matrix
+The operations we can do are like this
+
+    1 scale
+    [2 -3]  * 2 = [ 4 6 ]
+    [-4 9]        [-8 18]
+
+    2 element wise
+    [a b] + [e f] = [a+e b+f]
+    [c d]   [g h]   [c+g d+h]
+
+    3 Matrix Product
+    If we want to do matrix we need to have two matrix with same dimensions
+    
+    A = [a b c] B = [g h]
+        [d e f]     [i j]
+                    [k e]
+    A · B
+    we also need that A columns = B rows  
+    When we do a matrix product we will also get a matrix, and the dimensions will be
+    number of rows of A 
+    number of columns of b
+    [   ] 
+    [   ]
+    the position 1 1 gets the first column and the first row of A and B  a * g + b * i + c * k
+    the position 1 2 gets the first row of A and the second column of B a * h + b * j + c * e
+    the position 2 1 gets the second row of A and the first column of A d * g + e * i + f * k
+    the position 2 2 gets the second row and column of A and B d * h + e * j + f * e 
+PSEUDO CODE
+
+
+function NeuralNetwork(nInput,nHiden,nOutput):
+
+
+
+
+
+#code for matrix function
+
+#this function will generate a matrix, rows and columns. THIS IS NOT OPTIMAL its just to understand matrix
+class Matrix(rows, cols):
+
+    at the start:
+        matrix = []
+
+        for loop all rows:
+            matrix[i] = [];
+            for loop all cols:
+                matrix[i][j] = 0
+
+    function multiply(n):
+        if(n type is Matrix):
+            #this is element wise product
+            if cols != n.rows:
+                return null
+            
+            result = Matrix(rows, n.cols)
+            a = matrix
+            b = n.matrix
+
+            for loop(i) all rows:
+                for loop(j) all cols:
+                    sum = 0
+                    for loop(k) all a.cols:
+                        sum += a[i][k] * b[k][j]
+
+                    result.matrixs[i][j] = sum
+            return result
+        else:
+            #this is a normal scale/product
+            for loop all rows:
+                for loop all cols:
+                    matrix[i][j] *= n
+
+    function add(n):
+
+        if(n type is Matrix):
+            for loop all rows:
+                for loop all cols:
+                    matrix[i][j] += n.matrix[i][j]
+        else:
+            for loop all rows:
+                for loop all cols:
+                    matrix[i][j] += n
+
+    function randomize():
+        for loop all rows:
+            for loop all cols:
+                matrix[i][j] = get a random number
+
+    
+
