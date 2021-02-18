@@ -93,8 +93,8 @@ class Matrix(rows, cols):
             a = matrix
             b = n.matrix
 
-            for loop(i) all rows:
-                for loop(j) all cols:
+            for loop(i) all result.rows:
+                for loop(j) all result.cols:
                     sum = 0
                     for loop(k) all a.cols:
                         sum += a[i][k] * b[k][j]
