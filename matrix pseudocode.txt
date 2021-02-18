@@ -86,10 +86,10 @@ class Matrix(rows, cols):
     function multiply(n):
         if(n type is Matrix):
             #this is element wise product
-            if cols != n.rows:
+            if cols != n.rows:#es comproba que les columnes siguin iguals a les files per poder multiplicar, ja que es multipliquen els valors de la columne amb els valors de les files
                 return null
             
-            result = Matrix(rows, n.cols)
+            result = Matrix(rows, n.cols)#es crea una variable on anira el resultat 
             a = matrix
             b = n.matrix
 
