@@ -14,13 +14,12 @@ class Matrix:
                 a = self
                 b = n
 
-                for i in range(self.rows):
-                    for j in range(self.cols):
+                for i in range(result.rows):
+                    for j in range(result.cols):
                         sum = 0
                         for k in range(a.cols):
-                            
                             sum += a.matrix[i][k] * b.matrix[k][j]
-                            print(sum)
+                            
                         result.matrix[i][j] = sum
 
                 return result.matrix
@@ -56,12 +55,14 @@ m1.matrix[1][2] = 6
 m2.matrix[0][0] = 7
 m2.matrix[0][1] = 8
 m2.matrix[1][0] = 9
+
 m2.matrix[1][1] = 10
 m2.matrix[2][0] = 11
 m2.matrix[2][1] = 12
 
+m3 = m1.multiply(m2)
 
-print(m1.multiply(m2))
+print(m3)
 
 
 
